@@ -26,6 +26,7 @@ interface IProps {
   onItemRestore: VoidEffect;
   dragRef: MutableRefObject<HTMLHeadingElement>;
   isSearchActive?: boolean;
+  isAttached: boolean;
 }
 
 const wrapperStyle = { zIndex: 2 };
@@ -42,6 +43,7 @@ export const ItemCardHeader: FC<IProps> = ({
   onItemRestore,
   dragRef,
   isSearchActive,
+  isAttached
 }) => {
   const { formatMessage } = useIntl();
 
@@ -64,6 +66,15 @@ export const ItemCardHeader: FC<IProps> = ({
         <Flex>{icon}</Flex>
       </Flex>
       <Flex alignItems="center" style={wrapperStyle}>
+        {isAttached ? (
+          <ItemCardBadge borderColor="success200" backgroundColor="success100" textColor="success600">
+            {formatMessage(getTrad('components.navigationItem.badge.active'))}
+          </ItemCardBadge>
+        ) : (
+          <ItemCardBadge borderColor="danger200" backgroundColor="danger100" textColor="danger600">
+            {formatMessage(getTrad('components.navigationItem.badge.inactive'))}
+          </ItemCardBadge>
+        )}
         {removed && (
           <ItemCardBadge borderColor="danger200" backgroundColor="danger100" textColor="danger600">
             {formatMessage(getTrad('components.navigationItem.badge.removed'))}
