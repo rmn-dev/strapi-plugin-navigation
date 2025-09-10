@@ -1,0 +1,351 @@
+import { z } from 'zod';
+import { NavigationItemAdditionalField } from '../../../../../schemas';
+interface FormSchemaBuilderInput {
+    isSingleSelected?: boolean;
+    additionalFields: Array<NavigationItemAdditionalField>;
+}
+export type NavigationInternalItemFormSchema = z.infer<ReturnType<typeof navigationInternalItemFormSchema>>;
+declare const navigationInternalItemFormSchema: ({ additionalFields, isSingleSelected, }: FormSchemaBuilderInput) => z.ZodObject<{
+    title: z.ZodString;
+    autoSync: z.ZodOptional<z.ZodBoolean>;
+    removed: z.ZodOptional<z.ZodBoolean>;
+    updated: z.ZodOptional<z.ZodBoolean>;
+    uiRouterKey: z.ZodString;
+    levelPath: z.ZodOptional<z.ZodString>;
+    isMenuAllowedLevel: z.ZodOptional<z.ZodBoolean>;
+    parentAttachedToMenu: z.ZodOptional<z.ZodBoolean>;
+    viewId: z.ZodOptional<z.ZodNumber>;
+    structureId: z.ZodOptional<z.ZodString>;
+    menuAttached: z.ZodOptional<z.ZodBoolean>;
+    collapsed: z.ZodOptional<z.ZodBoolean>;
+    isSearchActive: z.ZodOptional<z.ZodBoolean>;
+    viewParentId: z.ZodOptional<z.ZodNumber>;
+    id: z.ZodOptional<z.ZodNumber>;
+    documentId: z.ZodOptional<z.ZodString>;
+    audience: z.ZodOptional<z.ZodArray<z.ZodString, "many">>;
+    order: z.ZodOptional<z.ZodNumber>;
+    items: z.ZodOptional<z.ZodArray<z.ZodAny, "many">>;
+    additionalFields: z.ZodObject<Record<string, z.ZodString | z.ZodOptional<z.ZodString> | z.ZodBoolean | z.ZodOptional<z.ZodBoolean> | z.ZodArray<z.ZodString, "many"> | z.ZodOptional<z.ZodArray<z.ZodString, "many">> | z.ZodAny | z.ZodOptional<z.ZodAny>>, "strip", z.ZodTypeAny, {
+        [x: string]: any;
+    }, {
+        [x: string]: any;
+    }>;
+} & {
+    type: z.ZodLiteral<"INTERNAL">;
+    path: z.ZodOptional<z.ZodUnion<[z.ZodString, z.ZodNull]>>;
+    externalPath: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    relatedType: z.ZodString;
+    related: z.ZodString | z.ZodOptional<z.ZodString>;
+}, "strip", z.ZodTypeAny, {
+    type: "INTERNAL";
+    title: string;
+    additionalFields: {
+        [x: string]: any;
+    };
+    uiRouterKey: string;
+    relatedType: string;
+    id?: number | undefined;
+    order?: number | undefined;
+    path?: string | null | undefined;
+    audience?: string[] | undefined;
+    documentId?: string | undefined;
+    externalPath?: string | null | undefined;
+    menuAttached?: boolean | undefined;
+    collapsed?: boolean | undefined;
+    autoSync?: boolean | undefined;
+    related?: string | undefined;
+    viewId?: number | undefined;
+    viewParentId?: number | undefined;
+    structureId?: string | undefined;
+    removed?: boolean | undefined;
+    isSearchActive?: boolean | undefined;
+    updated?: boolean | undefined;
+    items?: any[] | undefined;
+    levelPath?: string | undefined;
+    isMenuAllowedLevel?: boolean | undefined;
+    parentAttachedToMenu?: boolean | undefined;
+}, {
+    type: "INTERNAL";
+    title: string;
+    additionalFields: {
+        [x: string]: any;
+    };
+    uiRouterKey: string;
+    relatedType: string;
+    id?: number | undefined;
+    order?: number | undefined;
+    path?: string | null | undefined;
+    audience?: string[] | undefined;
+    documentId?: string | undefined;
+    externalPath?: string | null | undefined;
+    menuAttached?: boolean | undefined;
+    collapsed?: boolean | undefined;
+    autoSync?: boolean | undefined;
+    related?: string | undefined;
+    viewId?: number | undefined;
+    viewParentId?: number | undefined;
+    structureId?: string | undefined;
+    removed?: boolean | undefined;
+    isSearchActive?: boolean | undefined;
+    updated?: boolean | undefined;
+    items?: any[] | undefined;
+    levelPath?: string | undefined;
+    isMenuAllowedLevel?: boolean | undefined;
+    parentAttachedToMenu?: boolean | undefined;
+}>;
+export type NavigationItemFormSchema = z.infer<ReturnType<typeof navigationItemFormSchema>>;
+export declare const navigationItemFormSchema: (input: FormSchemaBuilderInput) => z.ZodDiscriminatedUnion<"type", [z.ZodObject<{
+    title: z.ZodString;
+    autoSync: z.ZodOptional<z.ZodBoolean>;
+    removed: z.ZodOptional<z.ZodBoolean>;
+    updated: z.ZodOptional<z.ZodBoolean>;
+    uiRouterKey: z.ZodString;
+    levelPath: z.ZodOptional<z.ZodString>;
+    isMenuAllowedLevel: z.ZodOptional<z.ZodBoolean>;
+    parentAttachedToMenu: z.ZodOptional<z.ZodBoolean>;
+    viewId: z.ZodOptional<z.ZodNumber>;
+    structureId: z.ZodOptional<z.ZodString>;
+    menuAttached: z.ZodOptional<z.ZodBoolean>;
+    collapsed: z.ZodOptional<z.ZodBoolean>;
+    isSearchActive: z.ZodOptional<z.ZodBoolean>;
+    viewParentId: z.ZodOptional<z.ZodNumber>;
+    id: z.ZodOptional<z.ZodNumber>;
+    documentId: z.ZodOptional<z.ZodString>;
+    audience: z.ZodOptional<z.ZodArray<z.ZodString, "many">>;
+    order: z.ZodOptional<z.ZodNumber>;
+    items: z.ZodOptional<z.ZodArray<z.ZodAny, "many">>;
+    additionalFields: z.ZodObject<Record<string, z.ZodString | z.ZodOptional<z.ZodString> | z.ZodBoolean | z.ZodOptional<z.ZodBoolean> | z.ZodArray<z.ZodString, "many"> | z.ZodOptional<z.ZodArray<z.ZodString, "many">> | z.ZodAny | z.ZodOptional<z.ZodAny>>, "strip", z.ZodTypeAny, {
+        [x: string]: any;
+    }, {
+        [x: string]: any;
+    }>;
+} & {
+    type: z.ZodLiteral<"EXTERNAL">;
+    path: z.ZodOptional<z.ZodUnion<[z.ZodString, z.ZodNull]>>;
+    externalPath: z.ZodEffects<z.ZodString, string, string>;
+    relatedType: z.ZodOptional<z.ZodString>;
+    related: z.ZodOptional<z.ZodString>;
+}, "strip", z.ZodTypeAny, {
+    type: "EXTERNAL";
+    title: string;
+    additionalFields: {
+        [x: string]: any;
+    };
+    externalPath: string;
+    uiRouterKey: string;
+    id?: number | undefined;
+    order?: number | undefined;
+    path?: string | null | undefined;
+    audience?: string[] | undefined;
+    documentId?: string | undefined;
+    menuAttached?: boolean | undefined;
+    collapsed?: boolean | undefined;
+    autoSync?: boolean | undefined;
+    related?: string | undefined;
+    viewId?: number | undefined;
+    viewParentId?: number | undefined;
+    structureId?: string | undefined;
+    removed?: boolean | undefined;
+    isSearchActive?: boolean | undefined;
+    updated?: boolean | undefined;
+    items?: any[] | undefined;
+    relatedType?: string | undefined;
+    levelPath?: string | undefined;
+    isMenuAllowedLevel?: boolean | undefined;
+    parentAttachedToMenu?: boolean | undefined;
+}, {
+    type: "EXTERNAL";
+    title: string;
+    additionalFields: {
+        [x: string]: any;
+    };
+    externalPath: string;
+    uiRouterKey: string;
+    id?: number | undefined;
+    order?: number | undefined;
+    path?: string | null | undefined;
+    audience?: string[] | undefined;
+    documentId?: string | undefined;
+    menuAttached?: boolean | undefined;
+    collapsed?: boolean | undefined;
+    autoSync?: boolean | undefined;
+    related?: string | undefined;
+    viewId?: number | undefined;
+    viewParentId?: number | undefined;
+    structureId?: string | undefined;
+    removed?: boolean | undefined;
+    isSearchActive?: boolean | undefined;
+    updated?: boolean | undefined;
+    items?: any[] | undefined;
+    relatedType?: string | undefined;
+    levelPath?: string | undefined;
+    isMenuAllowedLevel?: boolean | undefined;
+    parentAttachedToMenu?: boolean | undefined;
+}>, z.ZodObject<{
+    title: z.ZodString;
+    autoSync: z.ZodOptional<z.ZodBoolean>;
+    removed: z.ZodOptional<z.ZodBoolean>;
+    updated: z.ZodOptional<z.ZodBoolean>;
+    uiRouterKey: z.ZodString;
+    levelPath: z.ZodOptional<z.ZodString>;
+    isMenuAllowedLevel: z.ZodOptional<z.ZodBoolean>;
+    parentAttachedToMenu: z.ZodOptional<z.ZodBoolean>;
+    viewId: z.ZodOptional<z.ZodNumber>;
+    structureId: z.ZodOptional<z.ZodString>;
+    menuAttached: z.ZodOptional<z.ZodBoolean>;
+    collapsed: z.ZodOptional<z.ZodBoolean>;
+    isSearchActive: z.ZodOptional<z.ZodBoolean>;
+    viewParentId: z.ZodOptional<z.ZodNumber>;
+    id: z.ZodOptional<z.ZodNumber>;
+    documentId: z.ZodOptional<z.ZodString>;
+    audience: z.ZodOptional<z.ZodArray<z.ZodString, "many">>;
+    order: z.ZodOptional<z.ZodNumber>;
+    items: z.ZodOptional<z.ZodArray<z.ZodAny, "many">>;
+    additionalFields: z.ZodObject<Record<string, z.ZodString | z.ZodOptional<z.ZodString> | z.ZodBoolean | z.ZodOptional<z.ZodBoolean> | z.ZodArray<z.ZodString, "many"> | z.ZodOptional<z.ZodArray<z.ZodString, "many">> | z.ZodAny | z.ZodOptional<z.ZodAny>>, "strip", z.ZodTypeAny, {
+        [x: string]: any;
+    }, {
+        [x: string]: any;
+    }>;
+} & {
+    type: z.ZodLiteral<"INTERNAL">;
+    path: z.ZodOptional<z.ZodUnion<[z.ZodString, z.ZodNull]>>;
+    externalPath: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    relatedType: z.ZodString;
+    related: z.ZodString | z.ZodOptional<z.ZodString>;
+}, "strip", z.ZodTypeAny, {
+    type: "INTERNAL";
+    title: string;
+    additionalFields: {
+        [x: string]: any;
+    };
+    uiRouterKey: string;
+    relatedType: string;
+    id?: number | undefined;
+    order?: number | undefined;
+    path?: string | null | undefined;
+    audience?: string[] | undefined;
+    documentId?: string | undefined;
+    externalPath?: string | null | undefined;
+    menuAttached?: boolean | undefined;
+    collapsed?: boolean | undefined;
+    autoSync?: boolean | undefined;
+    related?: string | undefined;
+    viewId?: number | undefined;
+    viewParentId?: number | undefined;
+    structureId?: string | undefined;
+    removed?: boolean | undefined;
+    isSearchActive?: boolean | undefined;
+    updated?: boolean | undefined;
+    items?: any[] | undefined;
+    levelPath?: string | undefined;
+    isMenuAllowedLevel?: boolean | undefined;
+    parentAttachedToMenu?: boolean | undefined;
+}, {
+    type: "INTERNAL";
+    title: string;
+    additionalFields: {
+        [x: string]: any;
+    };
+    uiRouterKey: string;
+    relatedType: string;
+    id?: number | undefined;
+    order?: number | undefined;
+    path?: string | null | undefined;
+    audience?: string[] | undefined;
+    documentId?: string | undefined;
+    externalPath?: string | null | undefined;
+    menuAttached?: boolean | undefined;
+    collapsed?: boolean | undefined;
+    autoSync?: boolean | undefined;
+    related?: string | undefined;
+    viewId?: number | undefined;
+    viewParentId?: number | undefined;
+    structureId?: string | undefined;
+    removed?: boolean | undefined;
+    isSearchActive?: boolean | undefined;
+    updated?: boolean | undefined;
+    items?: any[] | undefined;
+    levelPath?: string | undefined;
+    isMenuAllowedLevel?: boolean | undefined;
+    parentAttachedToMenu?: boolean | undefined;
+}>, z.ZodObject<{
+    title: z.ZodString;
+    autoSync: z.ZodOptional<z.ZodBoolean>;
+    removed: z.ZodOptional<z.ZodBoolean>;
+    updated: z.ZodOptional<z.ZodBoolean>;
+    uiRouterKey: z.ZodString;
+    levelPath: z.ZodOptional<z.ZodString>;
+    isMenuAllowedLevel: z.ZodOptional<z.ZodBoolean>;
+    parentAttachedToMenu: z.ZodOptional<z.ZodBoolean>;
+    viewId: z.ZodOptional<z.ZodNumber>;
+    structureId: z.ZodOptional<z.ZodString>;
+    menuAttached: z.ZodOptional<z.ZodBoolean>;
+    collapsed: z.ZodOptional<z.ZodBoolean>;
+    isSearchActive: z.ZodOptional<z.ZodBoolean>;
+    viewParentId: z.ZodOptional<z.ZodNumber>;
+    id: z.ZodOptional<z.ZodNumber>;
+    documentId: z.ZodOptional<z.ZodString>;
+    audience: z.ZodOptional<z.ZodArray<z.ZodString, "many">>;
+    order: z.ZodOptional<z.ZodNumber>;
+    items: z.ZodOptional<z.ZodArray<z.ZodAny, "many">>;
+    additionalFields: z.ZodObject<Record<string, z.ZodString | z.ZodOptional<z.ZodString> | z.ZodBoolean | z.ZodOptional<z.ZodBoolean> | z.ZodArray<z.ZodString, "many"> | z.ZodOptional<z.ZodArray<z.ZodString, "many">> | z.ZodAny | z.ZodOptional<z.ZodAny>>, "strip", z.ZodTypeAny, {
+        [x: string]: any;
+    }, {
+        [x: string]: any;
+    }>;
+} & {
+    type: z.ZodLiteral<"WRAPPER">;
+    path: z.ZodOptional<z.ZodUnion<[z.ZodString, z.ZodNull]>>;
+}, "strip", z.ZodTypeAny, {
+    type: "WRAPPER";
+    title: string;
+    additionalFields: {
+        [x: string]: any;
+    };
+    uiRouterKey: string;
+    id?: number | undefined;
+    order?: number | undefined;
+    path?: string | null | undefined;
+    audience?: string[] | undefined;
+    documentId?: string | undefined;
+    menuAttached?: boolean | undefined;
+    collapsed?: boolean | undefined;
+    autoSync?: boolean | undefined;
+    viewId?: number | undefined;
+    viewParentId?: number | undefined;
+    structureId?: string | undefined;
+    removed?: boolean | undefined;
+    isSearchActive?: boolean | undefined;
+    updated?: boolean | undefined;
+    items?: any[] | undefined;
+    levelPath?: string | undefined;
+    isMenuAllowedLevel?: boolean | undefined;
+    parentAttachedToMenu?: boolean | undefined;
+}, {
+    type: "WRAPPER";
+    title: string;
+    additionalFields: {
+        [x: string]: any;
+    };
+    uiRouterKey: string;
+    id?: number | undefined;
+    order?: number | undefined;
+    path?: string | null | undefined;
+    audience?: string[] | undefined;
+    documentId?: string | undefined;
+    menuAttached?: boolean | undefined;
+    collapsed?: boolean | undefined;
+    autoSync?: boolean | undefined;
+    viewId?: number | undefined;
+    viewParentId?: number | undefined;
+    structureId?: string | undefined;
+    removed?: boolean | undefined;
+    isSearchActive?: boolean | undefined;
+    updated?: boolean | undefined;
+    items?: any[] | undefined;
+    levelPath?: string | undefined;
+    isMenuAllowedLevel?: boolean | undefined;
+    parentAttachedToMenu?: boolean | undefined;
+}>]>;
+export declare const fallbackDefaultValues: NavigationItemFormSchema;
+export {};

@@ -1,0 +1,93 @@
+import { NavigationItemFormSchema } from '../components/NavigationItemForm';
+export declare const useNavigationItemPopup: (canUpdate: boolean) => {
+    activeNavigationItem: Partial<{
+        title: string;
+        uiRouterKey: string;
+        externalPath: string;
+        type: "EXTERNAL";
+        additionalFields: {
+            [x: string]: any;
+        };
+        path?: string | null | undefined;
+        menuAttached?: boolean | undefined;
+        audience?: string[] | undefined;
+        relatedType?: string | undefined;
+        related?: string | undefined;
+        autoSync?: boolean | undefined;
+        id?: number | undefined;
+        removed?: boolean | undefined;
+        order?: number | undefined;
+        documentId?: string | undefined;
+        items?: any[] | undefined;
+        collapsed?: boolean | undefined;
+        viewId?: number | undefined;
+        viewParentId?: number | undefined;
+        structureId?: string | undefined;
+        isSearchActive?: boolean | undefined;
+        updated?: boolean | undefined;
+        levelPath?: string | undefined;
+        isMenuAllowedLevel?: boolean | undefined;
+        parentAttachedToMenu?: boolean | undefined;
+    } | {
+        title: string;
+        uiRouterKey: string;
+        type: "INTERNAL";
+        relatedType: string;
+        additionalFields: {
+            [x: string]: any;
+        };
+        path?: string | null | undefined;
+        externalPath?: string | null | undefined;
+        menuAttached?: boolean | undefined;
+        audience?: string[] | undefined;
+        related?: string | undefined;
+        autoSync?: boolean | undefined;
+        id?: number | undefined;
+        removed?: boolean | undefined;
+        order?: number | undefined;
+        documentId?: string | undefined;
+        items?: any[] | undefined;
+        collapsed?: boolean | undefined;
+        viewId?: number | undefined;
+        viewParentId?: number | undefined;
+        structureId?: string | undefined;
+        isSearchActive?: boolean | undefined;
+        updated?: boolean | undefined;
+        levelPath?: string | undefined;
+        isMenuAllowedLevel?: boolean | undefined;
+        parentAttachedToMenu?: boolean | undefined;
+    } | {
+        title: string;
+        uiRouterKey: string;
+        type: "WRAPPER";
+        additionalFields: {
+            [x: string]: any;
+        };
+        path?: string | null | undefined;
+        menuAttached?: boolean | undefined;
+        audience?: string[] | undefined;
+        autoSync?: boolean | undefined;
+        id?: number | undefined;
+        removed?: boolean | undefined;
+        order?: number | undefined;
+        documentId?: string | undefined;
+        items?: any[] | undefined;
+        collapsed?: boolean | undefined;
+        viewId?: number | undefined;
+        viewParentId?: number | undefined;
+        structureId?: string | undefined;
+        isSearchActive?: boolean | undefined;
+        updated?: boolean | undefined;
+        levelPath?: string | undefined;
+        isMenuAllowedLevel?: boolean | undefined;
+        parentAttachedToMenu?: boolean | undefined;
+    }> | undefined;
+    addNewNavigationItem: (event: MouseEvent, viewParentId?: number, isMenuAllowedLevel?: boolean, levelPath?: string, parentAttachedToMenu?: boolean, structureId?: string, maxOrder?: number) => void;
+    editNavigationItem: ({ item, levelPath, parentAttachedToMenu, }: {
+        item: NavigationItemFormSchema;
+        levelPath?: string;
+        parentAttachedToMenu?: boolean;
+    }) => void;
+    closeNavigationItemPopup: () => void;
+    isItemPopupVisible: boolean;
+};
