@@ -366,6 +366,7 @@ export const Item: React.FC<Props> = ({
               removed={mappedItem.removed}
               canUpdate={canUpdate}
               isSearchActive={mappedItem.isSearchActive}
+              isAttached={mappedItem.menuAttached}
             />
           </CardBody>
 

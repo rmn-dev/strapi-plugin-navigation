@@ -500,6 +500,8 @@ const en = {
         removed: 'Removed',
         draft: 'Draft',
         published: 'Published',
+        active: 'Active',
+        inactive: 'Inactive'
       },
       related: {
         localeMissing: '(Locale version missing)',
